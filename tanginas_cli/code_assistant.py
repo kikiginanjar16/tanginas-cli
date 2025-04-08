@@ -7,10 +7,22 @@ from pygments.formatters import TerminalFormatter
 import openai
 from typing import Dict, List
 
-openai.api_key = "disini_api_key_anda"
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+# Pastikan Anda sudah menginstal pygments dan openai
+# pip install pygments openai astor
+
+# Pastikan Anda sudah menginstal openai
+# pip install openai
+
+# Pastikan Anda sudah menginstal astor
+# pip install astor
+
+# Pastikan Anda sudah menginstal python-dotenv
+# pip install python-dotenv
 
 
-class AdvancedCodeAssistant:
+class TanginasCodeAssistant:
     def __init__(self):
         self.files: Dict[str, str] = {}
         self.current_file: str = None
@@ -141,6 +153,10 @@ class AdvancedCodeAssistant:
                 print("Perintah tidak dikenal")
 
 
-if __name__ == "__main__":
-    assistant = AdvancedCodeAssistant()
+def main():
+    assistant = TanginasCodeAssistant()
     assistant.run()
+
+
+if __name__ == "__main__":
+    main()

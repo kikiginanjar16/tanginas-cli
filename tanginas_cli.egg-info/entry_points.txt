@@ -1,0 +1,3 @@
+[console_scripts]
+tanginas-cli = tanginas_cli.code_assistant:main
+
