@@ -1,0 +1,21 @@
+# Tanginas CLI
+
+Tanginas CLI is a command-line tool designed to automate and simplify repetitive tasks. It provides a set of utilities to enhance productivity and streamline workflows.
+
+## Features
+
+- **Task Automation**: Automate repetitive tasks with ease.
+- **Customizable**: Configure the CLI to suit your specific needs.
+- **Lightweight**: Minimal dependencies for fast performance.
+
+## Installation
+
+To install Tanginas CLI, use the following command:
+
+git clone https://github.com/kikiginanjar16/tanginas-cli.git
+
+pip install pygments openai astor 
+
+## Run
+
+python main.py
