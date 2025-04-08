@@ -1,9 +1,0 @@
-setup.py
-tanginas_cli/__init__.py
-tanginas_cli/code_assistant.py
-tanginas_cli.egg-info/PKG-INFO
-tanginas_cli.egg-info/SOURCES.txt
-tanginas_cli.egg-info/dependency_links.txt
-tanginas_cli.egg-info/entry_points.txt
-tanginas_cli.egg-info/requires.txt
-tanginas_cli.egg-info/top_level.txt
