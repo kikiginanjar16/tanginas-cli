@@ -21,7 +21,6 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 # Pastikan Anda sudah menginstal python-dotenv
 # pip install python-dotenv
 
-
 class TanginasCodeAssistant:
     def __init__(self):
         self.files: Dict[str, str] = {}
@@ -57,16 +56,16 @@ class TanginasCodeAssistant:
             return
 
         prompt = f"""
-        Berikan hanya kode program untuk: {request}
-        Konteks saat ini:
-        {self.files[self.current_file]}
-        Jangan tambahkan penjelasan atau teks tambahan, hanya kode saja.
-        Tolong kirimkan tanpa format markdown atau tanpa blok kode ``` ya
+            Berikan hanya kode program untuk: {request}
+            Konteks saat ini:
+            {self.files[self.current_file]}
+            Jangan tambahkan penjelasan atau teks tambahan, hanya kode saja.
+            Tolong kirimkan tanpa format markdown atau tanpa blok kode ``` ya
         """
 
         try:
             response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                model="gpt-4.5-preview",
                 messages=[
                     {
                         "role": "system",
@@ -75,6 +74,7 @@ class TanginasCodeAssistant:
                     {"role": "user", "content": prompt},
                 ],
             )
+
             suggestion = response.choices[0].message.content
             self.files[self.current_file] += "\n\n" + suggestion
             self.history.append(f"AI suggestion for: {request}")
@@ -127,9 +127,7 @@ class TanginasCodeAssistant:
 
     def run(self) -> None:
         print("Selamat datang di Advanced Code Assistant!")
-        print(
-            "Perintah: load <filename>, save [filename], ai <request>, refactor <func_name>, show [filename], list, exit"
-        )
+        print( "Perintah: load <filename>, save [filename], ai <request>, refactor <func_name>, show [filename], list, exit" )
         while True:
             cmd = input("> ").strip().split()
             if not cmd:
