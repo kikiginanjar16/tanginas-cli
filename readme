@@ -16,6 +16,8 @@ git clone https://github.com/kikiginanjar16/tanginas-cli.git
 
 pip install pygments openai astor 
 
+pip install .
+
 ## Run
 export OPENAI_API_KEY='your-api-key-here'
 python main.py
